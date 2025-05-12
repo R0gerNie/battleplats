@@ -1,0 +1,123 @@
+{
+  "class": "black_turtle",
+  "unit_id": "black_turtle",
+  "element": ["water"],
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": [{
+      "hp": 560.0,
+      "atk": 60.0,
+      "def": 100.0,
+      "spd": 30.0,
+      "mag": 30.0
+  },{
+      "hp": 720.0,
+      "atk": 80.0,
+      "def": 120.0,
+      "spd": 40.0,
+      "mag": 60.0
+  },{
+      "hp": 1150.0,
+      "atk": 120.0,
+      "def": 180.0,
+      "spd": 50.0,
+      "mag": 80.0
+  }],
+  "skills": {
+    "active": [
+      {
+        "id": "hydra_attack",
+        "name": "水攻",
+        "element": ["water"],
+        "type": "physical",
+        "level": 1,
+        "cost": { "mp": 20 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_hydra_attack()"
+      },
+      {
+        "id": "waterspout_shoot",
+        "name": "水柱射击",
+        "element": ["water"],
+        "type": "magical",
+        "level": 2,
+        "cost": { "mp": 30 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_waterspout()"
+      },
+      {
+        "id": "muddy_water",
+        "name": "污浊之水",
+        "element": ["water"],
+        "type": "magical",
+        "level": 2,
+        "cost": { "mp": 45 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_muddy_water()"
+      },
+      {
+        "id": "strong_wave_attack",
+        "name": "波涛强袭",
+        "element": ["water"],
+        "type": "physical",
+        "level": 3,
+        "cost": { "mp": 45 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_strong_wave()"
+      },
+      {
+        "id": "suppress",
+        "name": "压制",
+        "element": [],
+        "type": "physical",
+        "level": 3,
+        "cost": { "mp": 25 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_suppress()"
+      },
+      {
+        "id": "hard_shell",
+        "name": "坚硬甲壳",
+        "element": [],
+        "type": "support",
+        "level": 1,
+        "cost": { "mp": 15 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_hard_shell()"
+      },
+      {
+        "id": "basalt_power",
+        "name": "玄武之力",
+        "element": [],
+        "type": "support",
+        "level": 3,
+        "cost": { "mp": 45 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_basalt_power()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "slime_skin",
+        "name": "粘液皮肤",
+        "element": [],
+        "type": "passive",
+        "level": 2,
+        "trigger": "onDamageReceived",
+        "effect_function": "apply_slime_skin()"
+      }
+
+    ]
+  }
+}

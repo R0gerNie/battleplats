@@ -1,0 +1,126 @@
+{
+  "class": "magnet_scorpion",
+  "unit_id": "magnet_scorpion",
+  "element": ["electric", "ground"],
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": [
+    {
+      "hp": 700,
+      "atk": 30,
+      "def": 120,
+      "spd": 25,
+      "mag": 100
+    },
+    {
+      "hp": 900,
+      "atk": 40,
+      "def": 160,
+      "spd": 30,
+      "mag": 140
+    },
+    {
+      "hp": 1200,
+      "atk": 50,
+      "def": 200,
+      "spd": 35,
+      "mag": 180
+    }
+  ],
+  "skills": {
+    "active": [
+      {
+        "id": "electric_wave",
+        "name": "电击波",
+        "element": ["electric"],
+        "type": "magical",
+        "level": 1,
+        "cost": {"mp": 15},
+        "cooldown": 2.5,
+        "trigger": "onCommand",
+        "effect_function": "cast_electric_wave()"
+      },
+      {
+        "id": "magnetic_resonance",
+        "name": "磁共振",
+        "element": ["electric"],
+        "type": "support",
+        "level": 1,
+        "cost": {"mp": 20},
+        "cooldown": 4.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_confusion()"
+      },
+      {
+        "id": "stone_missiles",
+        "name": "飞石射击",
+        "element": ["earth"],
+        "type": "physical",
+        "level": 1,
+        "cost": {"mp": 10},
+        "cooldown": 3.0,
+        "trigger": "onCommand",
+        "effect_function": "execute_rock_attack()"
+      },
+      {
+        "id": "wide_magnet_field",
+        "name": "广域磁场",
+        "element": ["electric"],
+        "type": "support",
+        "level": 2,
+        "cost": {"mp": 30},
+        "cooldown": 7.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_all_target_lock()"
+      },
+      {
+        "id": "sand_bombard",
+        "name": "风沙轰击",
+        "element": ["earth"],
+        "type": "magical",
+        "level": 2,
+        "cost": {"mp": 25},
+        "cooldown": 5.0,
+        "trigger": "onCommand",
+        "effect_function": "cast_sand_attack_with_confuse()"
+      },
+      {
+        "id": "magnetic_surge",
+        "name": "磁能浪涌",
+        "element": ["electric"],
+        "type": "support",
+        "level": 3,
+        "cost": {"mp": 40},
+        "cooldown": 10.0,
+        "trigger": "onCommand",
+        "effect_function": "boost_spd_and_mp_regeneration()"
+      },
+      {
+        "id": "magamagnet_storm",
+        "name": "万磁风暴",
+        "element": ["electric"],
+        "type": "magical",
+        "level": 3,
+        "cost": {"mp": 60},
+        "cooldown": 15.0,
+        "trigger": "onCommand",
+        "effect_function": "cast_aoe_electric_with_backswing()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "lightning_incarnation",
+        "name": "雷电化身",
+        "element": ["electric"],
+        "type": "passive",
+        "level": 2,
+        "trigger": "onDamageReceived",
+        "effect_function": "reflect_quarter_damage()"
+      }
+    ]
+  }
+}
