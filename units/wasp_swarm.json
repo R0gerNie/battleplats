@@ -1,0 +1,124 @@
+{
+  "class": "wasp_swarm",
+  "unit_id": "wasp_swarm",
+  "element": ["wind"],
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": [{
+      "hp": 480.0,
+      "atk": 50.0,
+      "def": 100.0,
+      "spd": 30.0,
+      "mag": 30.0
+  },{
+      "hp": 600.0,
+      "atk": 95.0,
+      "def": 45.0,
+      "spd": 110.0,
+      "mag": 40.0
+  },{
+      "hp": 850.0,
+      "atk": 125.0,
+      "def": 60.0,
+      "spd": 125.0,
+      "mag": 70.0
+  }],
+  "skills": {
+    "active": [
+      {
+        "id": "air_cut",
+        "name": "空气切",
+        "element": ["wind"],
+        "type": "magical",
+        "level": 1,
+        "cost": { "mp": 10 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_air_cut()"
+      },
+      {
+        "id": "buzzing_wave",
+        "name": "蜂鸣音波",
+        "element": ["wind"],
+        "type": "magical",
+        "level": 1,
+        "cost": { "mp": 15 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_mag_reduction()"
+      },
+      {
+        "id": "aerobatics",
+        "name": "疾风回旋",
+        "element": ["wind"],
+        "type": "physical",
+        "level": 2,
+        "cost": { "mp": 25 },
+        "cooldown": 60.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_evasion_buff()"
+      },
+      {
+        "id": "poisonous_needling",
+        "name": "剧毒针刺",
+        "element": [],
+        "type": "physical",
+        "level": 2,
+        "cost": { "mp": 30 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_poison()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "vacuum_roar",
+        "name": "真空啸",
+        "element": ["wind"],
+        "type": "magical",
+        "level": 3,
+        "cost": { "mp": 30 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "apply_confusion()"
+      },
+      {
+        "id": "honeycomb_energy",
+        "name": "蜂巢能量",
+        "element": [],
+        "type": "support",
+        "level": 3,
+        "cost": { "mp": 60 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "regen_hp_and_buff()"
+      },
+      {
+        "id": "swarm_assault",
+        "name": "蜂群突击",
+        "element": ["wind"],
+        "type": "physical",
+        "level": 3,
+        "cost": { "mp": 60 },
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "multi_hit_attack()"
+      }
+    ]
+  },
+  "passive": [
+      {
+        "id": "flying",
+        "name": "飞空",
+        "element": ["wind"],
+        "type": "passive",
+        "level": 2,
+        "trigger": "onDamageReceived",
+        "effect_function": "convert_damage_to_healing(0.3)"
+      }
+    ]
+}

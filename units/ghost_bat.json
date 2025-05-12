@@ -1,0 +1,113 @@
+{
+  "class": "ghost_bat",
+  "unit_id": "ghost_bat",
+  "element": ["dark", "wind"],
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": [
+    {
+      "hp": 450,
+      "atk": 80,
+      "def": 40,
+      "spd": 100,
+      "mag": 50
+    },
+    {
+      "hp": 600,
+      "atk": 130,
+      "def": 50,
+      "spd": 110,
+      "mag": 60
+    },
+    {
+      "hp": 850,
+      "atk": 160,
+      "def": 60,
+      "spd": 120,
+      "mag": 130
+    }
+  ],
+  "skills": {
+    "active": [
+      {
+        "id": "bloodsucking",
+        "name": "嗜血突袭",
+        "element": ["none"],
+        "type": "physical",
+        "level": 1,
+        "cost": {"mp": 10},
+        "cooldown": 2.5,
+        "trigger": "onCommand",
+        "effect_function": "drain_life(0.5)"
+      },
+      {
+        "id": "aerobatics",
+        "name": "疾风回旋",
+        "element": ["wind"],
+        "type": "physical",
+        "level": 2,
+        "cost": {"mp": 15},
+        "cooldown": 4.0,
+        "trigger": "onCommand",
+        "effect_function": "execute_spin_attack()"
+      },
+      {
+        "id": "shadow_doppelganger",
+        "name": "暗影双刃",
+        "element": ["dark"],
+        "type": "physical",
+        "level": 3,
+        "cost": {"mp": 40},
+        "cooldown": 8.0,
+        "trigger": "onCommand",
+        "effect_function": "perform_dual_strike()"
+      },
+      {
+        "id": "destructive_gale",
+        "name": "毁灭飓风",
+        "element": ["wind"],
+        "type": "magical",
+        "level": 2,
+        "cost": {"mp": 35},
+        "cooldown": 6.0,
+        "trigger": "onCommand",
+        "effect_function": "cast_aoe_wind()"
+      },
+      {
+        "id": "bloodline_resolution",
+        "name": "血契觉醒",
+        "element": ["none"],
+        "type": "support",
+        "level": 3,
+        "cost": {"mp": 60},
+        "cooldown": 12.0,
+        "trigger": "onCommand",
+        "effect_function": "boost_damage_and_regeneration()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "darkness_integrate",
+        "name": "融入黑暗",
+        "element": ["none"],
+        "type": "passive",
+        "level": 2,
+        "trigger": "onAttackReceived",
+        "effect_function": "gain_anti_terrain_immunity()"
+      },
+      {
+        "id": "flying",
+        "name": "飞空",
+        "element": ["wind"],
+        "type": "passive",
+        "level": 1,
+        "trigger": "onDamageReceived",
+        "effect_function": "convert_damage_to_healing(0.3)"
+      }
+    ]
+  }
+}

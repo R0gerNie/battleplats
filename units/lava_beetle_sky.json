@@ -1,0 +1,126 @@
+{
+  "class": "lava_beetle",
+  "unit_id": "lava_beetle_sky",
+  "element": ["fire"],
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": [
+    {
+      "hp": 500,
+      "atk": 40,
+      "def": 60,
+      "spd": 30,
+      "mag": 40
+    },
+    {
+      "hp": 650,
+      "atk": 60,
+      "def": 75,
+      "spd": 35,
+      "mag": 70
+    },
+    {
+      "hp": 800,
+      "atk": 110,
+      "def": 90,
+      "spd": 50,
+      "mag": 60
+    }
+  ],
+  "skills": {
+    "active": [
+      {
+        "id": "fire_bullet",
+        "name": "火焰弹",
+        "element": ["fire"],
+        "type": "magical",
+        "level": 1,
+        "cost": {"mp": 10},
+        "cooldown": 3.0,
+        "trigger": "onCommand",
+        "effect_function": "cast_fire_bullet()"
+      },
+      {
+        "id": "lava_blade",
+        "name": "熔岩剑",
+        "element": ["fire"],
+        "type": "physical",
+        "level": 2,
+        "cost": {"mp": 15},
+        "cooldown": 5.0,
+        "trigger": "onCommand",
+        "effect_function": "execute_lava_blade()"
+      },
+      {
+        "id": "breakthrough_fire",
+        "name": "贯穿火焰",
+        "element": ["fire"],
+        "type": "magical",
+        "level": 2,
+        "cost": {"mp": 25},
+        "cooldown": 6.0,
+        "trigger": "onCommand",
+        "effect_function": "cast_line_fire()"
+      },
+      {
+        "id": "heating_up",
+        "name": "升温",
+        "element": ["fire"],
+        "type": "support",
+        "level": 2,
+        "cost": {"mp": 10},
+        "cooldown": 4.0,
+        "trigger": "onTurnStart",
+        "effect_function": "apply_heating_buff()"
+      },{
+        "id": "lava_plain",
+        "name": "熔岩之地",
+        "element": ["fire"],
+        "type": "support",
+        "level": 2,
+        "cost": {"mp": 25},
+        "cooldown": 8.0,
+        "trigger": "onCommand",
+        "effect_function": "create_lava_zone()"
+      },
+      {
+        "id": "tornado_impact",
+        "name": "龙卷冲击",
+        "element": ["wind"],
+        "type": "physical",
+        "level": 2,
+        "cost": {"mp": 30},
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "tornado_impact()"
+      },
+      {
+        "id": "heating_cyclone",
+        "name": "高温旋风",
+        "element": ["fire"],
+        "type": "magical",
+        "level": 2,
+        "cost": {"mp": 50},
+        "cooldown": 100.0,
+        "trigger": "onCommand",
+        "effect_function": "heating_cyclone()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "flame_body",
+        "name": "火焰身躯",
+        "element": ["fire"],
+        "type": "passive",
+        "level": 1,
+        "trigger": "onMeleeHit",
+        "effect_function": "apply_burn(0.5)"
+      }
+
+    ]
+  }
+}

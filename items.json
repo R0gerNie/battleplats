@@ -1,0 +1,82 @@
+{
+  "class": "turtle",
+  "unit_id": "small_black_turtle",
+  "element": ["water"],
+  "level": 1,
+  "max_level": 3,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "attributes": {
+      "hp": 1500.0,
+      "atk": 80.0,
+      "def": 120.0,
+      "spd": 40.0,
+      "mag": 90.0
+  },
+  "resistances": {
+    "fire": -0.3,
+    "ice": 0.1,
+    "electric": 0.2,
+    "wind": -0.1,
+    "water": 0.0,
+    "ground": 0.3,
+    "wood": -0.2,
+    "light": 0.1,
+    "dark": 0.0
+  },
+  "skills": {
+    "active": [
+      {
+        "id": "tidal_wave",
+        "name": "潮汐冲击",
+        "element": "water",
+        "type": "active",
+        "cost": { "mp": 25 },
+        "cooldown": 5.0,
+        "trigger": "onCommand",
+        "effect_function": "placeholder()"
+      },
+      {
+        "id": "leech_seed",
+        "name": "藤壶寄生",
+        "element": "wood",
+        "type": "active",
+        "cost": { "mp": 15 },
+        "cooldown": 8.0,
+        "trigger": "onAttack",
+        "effect_function": "placeholder()"
+      }
+    ],
+    "passive": [
+      {
+        "id": "turtle_shell",
+        "name": "龟甲防御",
+        "element": "water",
+        "type": "passive",
+        "trigger": "onTakeDamage",
+        "effect_function": "apply_defense_buff()"
+      },
+      {
+        "id": "water_breathing",
+        "name": "水肺呼吸",
+        "element": "water",
+        "type": "passive",
+        "trigger": "onSpawn",
+        "effect_function": "grant_oxygen_supply()"
+      }
+    ]
+  },
+  "special_abilities": {
+    "turtle_shield": {
+      "activation_condition": "hp < 30%",
+      "duration": 10.0,
+      "stats_boost": {
+        "def": 50.0,
+        "spd": -20.0
+      }
+    }
+  }
+}
